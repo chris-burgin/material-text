@@ -9928,31 +9928,50 @@ var App = function (_React$Component) {
   _inherits(App, _React$Component);
 
   // setup the constructor
-  function App() {
+  function App(props) {
     _classCallCheck(this, App);
 
-    // set initial state (will be from redux)
-    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this));
+    // set store
+    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
     // declares this the constructor
 
 
-    _this.state = {};
+    _this.store = props.store;
+
+    // set the initial state
+    _this.state = _this.store.getState();
+
+    // launch subscriber
+    _this.subscriber();
     return _this;
   }
 
   _createClass(App, [{
+    key: 'subscriber',
+    value: function subscriber() {
+      var _this2 = this;
+
+      this.store.subscribe(function () {
+        _this2.setState(_this2.store.getState());
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
       return _react2.default.createElement(
         'div',
-        null,
+        { onClick: function onClick() {
+            return _this3.click1();
+          } },
         _react2.default.createElement(_index2.default, null)
       );
     }
   }, {
     key: 'click1',
     value: function click1() {
-      console.log(this.state);
+      this.store.dispatch({ type: 'ITEMOPEN', id: 2 });
     }
   }]);
 
@@ -10135,7 +10154,7 @@ Object.defineProperty(exports, "__esModule", {
 // use: updates 'activeItem' to action.value
 // ****************
 var ITEMOPEN = function ITEMOPEN(state, action) {
-  state.activeItem = action.value;
+  state.activeItem = action.id;
   return state;
 };
 
@@ -22951,6 +22970,12 @@ module.exports = function(module) {
 "use strict";
 
 
+var _redux = __webpack_require__(89);
+
+var _index = __webpack_require__(88);
+
+var _index2 = _interopRequireDefault(_index);
+
 var _react = __webpack_require__(32);
 
 var _react2 = _interopRequireDefault(_react);
@@ -22959,37 +22984,27 @@ var _reactDom = __webpack_require__(31);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _redux = __webpack_require__(89);
-
-var _index = __webpack_require__(88);
-
-var _index2 = _interopRequireDefault(_index);
-
 var _index3 = __webpack_require__(87);
 
 var _index4 = _interopRequireDefault(_index3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// create store
+// create store - subscribe inside <App/>
 
 
 // import reducers
 var store = (0, _redux.createStore)(_index2.default);
 
-// test sub
-
-
-// import components
-// import react
-store.subscribe(function () {
-  return console.log(store.getState());
-});
-
-store.dispatch({ type: 'ITEMOPEN', value: '1' });
-
 // render the app
-_reactDom2.default.render(_react2.default.createElement(_index4.default, null), document.getElementById('hook'));
+
+
+// import react components
+
+
+// import react
+// import redux
+_reactDom2.default.render(_react2.default.createElement(_index4.default, { store: store }), document.getElementById('hook'));
 
 /***/ })
 /******/ ]);

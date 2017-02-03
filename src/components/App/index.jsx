@@ -7,24 +7,32 @@ import Sidebar from '../Sidebar/index.jsx'
 
 class App extends React.Component {
   // setup the constructor
-  constructor() {
+  constructor(props) {
     // declares this the constructor
-    super()
+    super(props)
 
-    // set initial state (will be from redux)
-    this.state = {}
+    // set store
+    this.store = props.store;
+
+    // set the initial state
+    this.state = this.store.getState()
+
+    // launch subscriber
+    this.subscriber()
+  }
+
+  subscriber() {
+    this.store.subscribe(() => {
+      this.setState(this.store.getState())
+    })
   }
 
   render() {
     return (
-      <div>
+      <div className="app">
         <Sidebar/>
       </div>
     )
-  }
-
-  click1() {
-    console.log(this.state)
   }
 }
 

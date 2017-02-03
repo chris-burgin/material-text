@@ -1,25 +1,20 @@
-// import react
-import React from 'react';
-import ReactDOM from 'react-dom';
+// import redux
 import {createStore} from 'redux'
 
 // import reducers
 import AppReducers from './reducers/index'
 
-// import components
+// import react
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+// import react components
 import App from './components/App/index.jsx'
 
-// create store
+// create store - subscribe inside <App/>
 let store = createStore(AppReducers)
-
-// test sub
-store.subscribe(() =>
-  console.log(store.getState())
-)
-
-store.dispatch({ type: 'ITEMOPEN', id: '1' })
 
 // render the app
 ReactDOM.render(
-  <App/>,
+  <App store={store}/>,
   document.getElementById('hook'));
