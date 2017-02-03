@@ -4,8 +4,13 @@
   "description": "A minimal Electron application",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
-    "build": "webpack --config scripts/webpack.config.js"
+    "start": "npm run build && electron .",
+    "build:webpack": "webpack --config scripts/webpack.config.js --progress --colors",
+    "build:stylus": "stylus ./src/styl/main.styl -o ./dist/css/main.css",
+    "build": "npm run build:webpack & npm run build:stylus",
+    "watch:webpack": "webpack --config scripts/webpack.config.js --progress --colors --watch",
+    "watch:stylus": "stylus -w ./src/styl/main.styl -o ./dist/css/main.css",
+    "watch": "npm run watch:webpack & npm run watch:stylus"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [

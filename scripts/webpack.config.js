@@ -1,9 +1,9 @@
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/main.js',
+  entry: './src/js/main.js',
   output: {
-    filename: './dist/main.js'
+    filename: './dist/js/main.js'
   },
   module : {
     loaders : [

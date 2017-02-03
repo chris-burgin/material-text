@@ -10207,13 +10207,12 @@ var SidebarItem = function (_React$Component) {
 
       return _react2.default.createElement(
         'div',
-        null,
+        { onClick: function onClick() {
+            return _this2.store.dispatch((0, _actions.itemOpen)(_this2.props.refKey));
+          } },
         _react2.default.createElement(
           'span',
-          {
-            onClick: function onClick() {
-              return _this2.store.dispatch((0, _actions.itemOpen)(_this2.props.refKey));
-            } },
+          null,
           'sidebaritem'
         )
       );
