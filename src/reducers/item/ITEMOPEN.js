@@ -3,7 +3,7 @@
 // use: updates 'activeItem' to action.value
 // ****************
 const ITEMOPEN = (state, action) => {
-  state.activeItem = action.id
+  state.activeItem = action.itemId
   return state
 }
 

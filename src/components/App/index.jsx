@@ -30,7 +30,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <Sidebar/>
+        <Sidebar
+          store={this.store}
+          items={this.state.items}
+          activeItem={this.state.activeItem}/>
       </div>
     )
   }
