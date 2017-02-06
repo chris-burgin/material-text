@@ -3,9 +3,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // import action creators
-import {itemOpen} from './actions.js'
+import {
+  itemOpen
+} from './actions.js'
+
+// import functions
+import {
+  getTitle
+} from './functions.js'
 
 class SidebarItem extends React.Component {
+  // ****************
+  // Constuctor
+  // ****************
   constructor(props) {
     super(props)
 
@@ -13,12 +23,24 @@ class SidebarItem extends React.Component {
     this.store = props.store;
   }
 
+  // ****************
+  // Actions
+  // ****************
+  selectItem(e) {
+    // dispatch open item
+    this.store.dispatch(itemOpen(this.props.refKey))
+  }
+
+  // ****************
+  // Render
+  // ****************
   render() {
     return (
-      <div onClick={() => this.store.dispatch(itemOpen(this.props.refKey))}>
-        <span>
-          sidebaritem
-        </span>
+      <div
+        className="sidebaritem"
+        data-active={this.props.active}
+        onClick={this.selectItem.bind(this)}>
+        <h2> {getTitle(this.props.item.content)}</h2>
       </div>
     )
   }

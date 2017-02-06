@@ -24,7 +24,8 @@ class Sidebar extends React.Component {
               key={key}
               refKey={key}
               item={this.props.items[key]}
-              store={this.store}/>
+              store={this.store}
+              active={(this.props.activeItem === key ? true : false)}/>
           )
         )}
       </div>
