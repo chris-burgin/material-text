@@ -13,7 +13,13 @@ const reducerSwitch = {
   "UPDATESEARCH": UPDATESEARCH
 }
 
-// App State Reducer Manager
+// ****************
+// AppReducers()
+// use: App State Reducer Manager
+// ----------------
+// state: optional - json - state to be updated
+// action: optional - json - redux action to be taken
+// ****************
 const AppReducers = (state = initialState, action = {}) =>
   reducerSwitch[action.type] ?
     reducerSwitch[action.type](state, action) :
