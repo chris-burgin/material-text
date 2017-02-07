@@ -1,12 +1,16 @@
 // import initial state
 import initialState from './initialState'
 
-// import reducers
+// import item reducers
 import ITEMOPEN from './item/ITEMOPEN'
+
+// import search reducers
+import UPDATESEARCH from './search/UPDATESEARCH'
 
 // switch
 const reducerSwitch = {
-  "ITEMOPEN": ITEMOPEN
+  "ITEMOPEN": ITEMOPEN,
+  "UPDATESEARCH": UPDATESEARCH
 }
 
 // App State Reducer Manager

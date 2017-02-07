@@ -1,6 +1,7 @@
 // initial state
 const initialState = {
   activeItem: "0",
+  filter: { searchText: "" },
   items: {
     0: {
       content: "Birthday Planning \n this is more content on a new line.",

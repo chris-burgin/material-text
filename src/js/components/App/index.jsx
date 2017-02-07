@@ -33,6 +33,7 @@ class App extends React.Component {
         <Sidebar
           store={this.store}
           items={this.state.items}
+          filter={this.state.filter}
           activeItem={this.state.activeItem}/>
       </div>
     )
