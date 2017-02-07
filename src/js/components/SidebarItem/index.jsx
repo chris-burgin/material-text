@@ -9,7 +9,8 @@ import {
 
 // import functions
 import {
-  getTitle
+  getTitle,
+  getShort
 } from './functions.js'
 
 class SidebarItem extends React.Component {
@@ -40,7 +41,13 @@ class SidebarItem extends React.Component {
         className="sidebaritem"
         data-active={this.props.active}
         onClick={this.selectItem.bind(this)}>
-        <h2> {getTitle(this.props.item.content)}</h2>
+        <div className="title">
+          <h2> {getTitle(this.props.content)} </h2>
+          <span className="date"> {this.props.date} </span>
+        </div>
+        <div className="meta">
+          <span className="short"> {getShort(this.props.content)} </span>
+        </div>
       </div>
     )
   }

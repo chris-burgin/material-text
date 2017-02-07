@@ -17,14 +17,16 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="sidebar">
         {(
           Object.keys(this.props.items).map((key) =>
             <SidebarItem
+              store={this.store}
               key={key}
               refKey={key}
-              item={this.props.items[key]}
-              store={this.store}
+              content={this.props.items[key].content}
+              date={this.props.items[key].date}
+              tags={this.props.items[key].tags}
               active={(this.props.activeItem === key ? true : false)}/>
           )
         )}

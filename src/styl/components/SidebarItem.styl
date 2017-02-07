@@ -1,0 +1,41 @@
+.sidebaritem {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  height: 8rem;
+  padding: 0 1.6rem;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+  cursor: pointer;
+
+  &:hover {
+    background-color: grey1;
+  }
+
+  &[data-active="true"] {
+    background-color: primary;
+    color: white;
+
+    .short, .title .date {
+      color: white;
+    }
+  }
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      margin: 0;
+    }
+
+    .date {
+      font-size: 1.2rem;
+      color: grey3;
+    }
+  }
+
+  .short {
+    color: grey2;
+  }
+}
