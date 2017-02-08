@@ -6,9 +6,9 @@
 // itemId: required - int - item id to evaluate
 // ****************
 const isActive = (activeId, itemId) =>
-  (activeId === itemId
+  activeId === itemId
     ? true
-    : false)
+    : false
 
 // export
 export {

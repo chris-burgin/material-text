@@ -2,7 +2,7 @@
 import initialState from './initialState'
 
 // ****************
-// Reducers
+// Reducer Imports
 // ****************
 // item
 import {
@@ -15,7 +15,7 @@ import {
 } from '../components/SearchBar/reducers'
 
 // ****************
-// Switch
+// Switch Logic
 // ****************
 const reducerSwitch = {
   "ITEMOPEN": ITEMOPEN,
