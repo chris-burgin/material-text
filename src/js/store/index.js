@@ -1,13 +1,22 @@
 // import initial state
 import initialState from './initialState'
 
-// import item reducers
-import ITEMOPEN from './item/ITEMOPEN'
+// ****************
+// Reducers
+// ****************
+// item
+import {
+  ITEMOPEN
+} from '../components/SidebarItem/reducers'
 
-// import search reducers
-import UPDATESEARCH from './search/UPDATESEARCH'
+// filter
+import {
+  UPDATESEARCH
+} from '../components/SearchBar/reducers'
 
-// switch
+// ****************
+// Switch
+// ****************
 const reducerSwitch = {
   "ITEMOPEN": ITEMOPEN,
   "UPDATESEARCH": UPDATESEARCH
@@ -21,9 +30,9 @@ const reducerSwitch = {
 // action: optional - json - redux action to be taken
 // ****************
 const AppReducers = (state = initialState, action = {}) =>
-  reducerSwitch[action.type] ?
-    reducerSwitch[action.type](state, action) :
-    state
+  reducerSwitch[action.type]
+    ? reducerSwitch[action.type](state, action)
+    : state
 
 // export AppReducers
 export default AppReducers

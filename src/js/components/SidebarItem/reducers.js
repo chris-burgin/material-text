@@ -8,4 +8,6 @@ const ITEMOPEN = (state, action) => {
 }
 
 // export
-export default ITEMOPEN
+export {
+  ITEMOPEN
+}

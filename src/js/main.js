@@ -1,8 +1,8 @@
 // import redux
 import {createStore} from 'redux'
 
-// import reducers
-import AppReducers from './reducers/index'
+// import store
+import AppReducers from './store/index'
 
 // import react
 import React from 'react';

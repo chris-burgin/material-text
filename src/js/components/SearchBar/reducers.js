@@ -8,4 +8,6 @@ const UPDATESEARCH = (state, action) => {
 }
 
 // export
-export default UPDATESEARCH
+export {
+  UPDATESEARCH
+}
