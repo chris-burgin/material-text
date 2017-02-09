@@ -1,4 +1,8 @@
 // ****************
+// Helper Functions
+// ****************
+
+// ****************
 // getLine()
 // use: returns a specified line from the content text
 // ----------------
@@ -7,6 +11,10 @@
 // ****************
 const getLine = (lineNumber, text) =>
   text.split('\n')[lineNumber]
+
+// ****************
+// Exported Functions
+// ****************
 
 // ****************
 // getTitle()

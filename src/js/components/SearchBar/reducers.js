@@ -1,4 +1,8 @@
 // ****************
+// REDUCERS
+// ****************
+
+// ****************
 // UPDATESEARCH()
 // use: updates 'filter -> searchText' to action.value
 // ****************

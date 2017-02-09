@@ -1,14 +1,16 @@
 // ****************
 // Actions
 // ****************
-const UPDATESEARCH = "UPDATESEARCH"
+// const UPDATESEARCH = "UPDATESEARCH"
 
 // ****************
 // Action Creators
 // ****************
-const updateSearch = (searchText) => {
-  return {type: UPDATESEARCH, searchText: searchText}
-}
+// const updateSearch = (searchText) => {
+//   return {type: UPDATESEARCH, searchText: searchText}
+// }
 
 // exports
-export {updateSearch}
+export {
+  // updateSearch
+}

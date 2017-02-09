@@ -11,4 +11,6 @@ const itemOpen = (itemId) => {
 }
 
 // exports
-export {itemOpen}
+export {
+  itemOpen
+}
