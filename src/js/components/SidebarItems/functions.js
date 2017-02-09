@@ -10,6 +10,19 @@ const isActive = (activeId, itemId) =>
     ? true
     : false
 
+const tagFilter = (searchText, tags) =>
+  tags.find((tag) => tag.includes(searchText))
+    ? true
+    : false
+
+const textFilter = (searchText, text) => {
+
+}
+
+const isFiltered = (searchText, tags, text) => {
+
+}
+
 // export
 export {
   isActive
