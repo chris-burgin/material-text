@@ -23,6 +23,7 @@ class Sidebar extends React.Component {
         <SidebarItems
           store={this.store}
           items={this.props.items}
+          filter={this.props.filter}
           activeItem={this.props.activeItem} />
       </div>
     )

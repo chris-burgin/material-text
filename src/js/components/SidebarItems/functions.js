@@ -1,3 +1,22 @@
+const objValues = (obj) =>
+  Object.keys(obj).map((key) => obj[key])
+
+const tagFilter = (searchText, tags) =>
+  objValues(tags).find((value) => value.toLowerCase().includes(searchText))
+    ? true
+    : false
+
+const textFilter = (searchText, content) =>
+  content.toLowerCase().includes(searchText.toLowerCase())
+
+const notEmpty = (searchText) =>
+  searchText.length > 0
+
+const containsFilter = (searchText, tags, text) =>
+  notEmpty(searchText)
+    ? textFilter(searchText, text) || tagFilter(searchText, tags)
+    : true
+
 // ****************
 // isActive()
 // use: checks
@@ -10,20 +29,8 @@ const isActive = (activeId, itemId) =>
     ? true
     : false
 
-const tagFilter = (searchText, tags) =>
-  tags.find((tag) => tag.includes(searchText))
-    ? true
-    : false
-
-const textFilter = (searchText, text) => {
-
-}
-
-const isFiltered = (searchText, tags, text) => {
-
-}
-
 // export
 export {
-  isActive
+  isActive,
+  containsFilter
 }
