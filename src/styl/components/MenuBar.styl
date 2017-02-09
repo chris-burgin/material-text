@@ -1,5 +1,31 @@
 .menubar {
+  display: flex;
+  align-items: center;
+  padding: 0 1.6rem
   background-color: white;
   width: 100%;
   height: 4rem;
+
+  .actions {
+    // apply to all action svgs
+    svg {
+      width: auto;
+      height: 1.6rem;
+    }
+
+    // trash svg
+    .trash {
+      cursor: pointer;
+
+      svg g {
+        fill: grey6;
+      }
+
+      &:hover {
+        svg g {
+          fill: red;
+        }
+      }
+    }
+  }
 }

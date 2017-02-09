@@ -13,6 +13,12 @@ import {
   getShort
 } from './functions.js'
 
+// import resources
+import {
+  trash
+} from './resources.js'
+
+
 class MenuBar extends React.Component {
   // ****************
   // Constuctor
@@ -34,7 +40,9 @@ class MenuBar extends React.Component {
   render() {
     return (
       <div className="menubar">
-
+        <div className="actions">
+          <span className="trash"> {trash} </span>
+        </div>
       </div>
     )
   }
