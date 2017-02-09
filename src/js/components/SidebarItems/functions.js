@@ -48,7 +48,7 @@ const notEmpty = (searchText) =>
   searchText.length > 0
 
 // ****************
-// Exposed Functions
+// Exported Functions
 // ****************
 
 // ****************
