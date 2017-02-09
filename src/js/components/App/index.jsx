@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 
 // import modules
 import Sidebar from '../Sidebar/index.jsx'
+import Main from '../Main/index.jsx'
 
 class App extends React.Component {
   // setup the constructor
@@ -35,6 +36,8 @@ class App extends React.Component {
           items={this.state.items}
           filter={this.state.filter}
           activeItem={this.state.activeItem}/>
+        <Main
+          store={this.store} />
       </div>
     )
   }

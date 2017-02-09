@@ -19,7 +19,7 @@ class Sidebar extends React.Component {
       <div className="sidebar">
         <SearchBar
           store={this.store}/>
-
+        <div className="tagfilter"></div>
         <SidebarItems
           store={this.store}
           items={this.props.items}
