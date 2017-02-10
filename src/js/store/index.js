@@ -9,6 +9,10 @@ import {
   ITEMOPEN
 } from '../components/SidebarItem/reducers'
 
+import {
+  UPDATEITEMCONTENT
+} from '../components/Editor/reducers'
+
 // filter
 import {
   UPDATESEARCH
@@ -19,7 +23,8 @@ import {
 // ****************
 const reducerSwitch = {
   "ITEMOPEN": ITEMOPEN,
-  "UPDATESEARCH": UPDATESEARCH
+  "UPDATESEARCH": UPDATESEARCH,
+  "UPDATEITEMCONTENT": UPDATEITEMCONTENT
 }
 
 // ****************

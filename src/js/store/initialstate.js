@@ -1,6 +1,6 @@
 // initial state
 const initialState = {
-  activeItem: "0",
+  activeItemId: "0",
   filter: { searchText: "" },
   items: {
     0: {

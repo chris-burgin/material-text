@@ -35,9 +35,11 @@ class App extends React.Component {
           store={this.store}
           items={this.state.items}
           filter={this.state.filter}
-          activeItem={this.state.activeItem}/>
+          activeItemId={this.state.activeItemId}/>
         <Main
-          store={this.store} />
+          activeItemId={this.state.activeItemId}
+          item={this.state.items[this.state.activeItemId]}
+          store={this.store}/>
       </div>
     )
   }

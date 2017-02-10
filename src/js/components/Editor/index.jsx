@@ -2,20 +2,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+// outside modules
+import CodeMirror from 'react-codemirror'
+
 // import modules
 import MenuBar from '../MenuBar/index.jsx'
 import TagBar from '../TagBar/index.jsx'
-import Editor from '../Editor/index.jsx'
 
 // import action creators
 import {
+  updateItemContent
 } from './actions.js'
 
 // import functions
 import {
 } from './functions.js'
 
-class Main extends React.Component {
+class Editor extends React.Component {
   // ****************
   // Constuctor
   // ****************
@@ -29,27 +32,20 @@ class Main extends React.Component {
   // ****************
   // Actions
   // ****************
+  onContentChange(newContent) {
+    this.store.dispatch(updateItemContent(this.props.activeItemId, newContent))
+  }
 
   // ****************
   // Render
   // ****************
   render() {
     return (
-      <div className="main">
-        <MenuBar
-          store={this.store}
-          activeItemId={this.props.activeItemId}/>
-        <TagBar
-          store={this.store}
-          activeItemId={this.props.activeItemId}/>
-        <Editor
-          store={this.store}
-          content={this.props.item.content}
-          tags={this.props.item.tags}
-          activeItemId={this.props.activeItemId}/>
+      <div className="editor">
+        <CodeMirror value={this.props.content} onChange={this.onContentChange.bind(this)} options={{viewportMargin: 0}}/>
       </div>
     )
   }
 }
 
-export default Main
+export default Editor

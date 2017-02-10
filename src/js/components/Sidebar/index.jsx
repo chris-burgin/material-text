@@ -24,7 +24,7 @@ class Sidebar extends React.Component {
           store={this.store}
           items={this.props.items}
           filter={this.props.filter}
-          activeItem={this.props.activeItem} />
+          activeItemId={this.props.activeItemId} />
       </div>
     )
   }

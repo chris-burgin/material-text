@@ -35,7 +35,7 @@ class SidebarItems extends React.Component {
                   content={this.props.items[key].content}
                   date={this.props.items[key].date}
                   tags={this.props.items[key].tags}
-                  active={isActive(this.props.activeItem, key)}/>
+                  active={isActive(this.props.activeItemId, key)}/>
                 : false)
         )}
       </div>
