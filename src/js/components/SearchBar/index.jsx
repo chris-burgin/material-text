@@ -11,6 +11,11 @@ import {
 import {
 } from './functions.js'
 
+// import resources
+import {
+  plus
+} from './resources.js'
+
 class SearchBar extends React.Component {
   // ****************
   // Constuctor
@@ -40,6 +45,7 @@ class SearchBar extends React.Component {
         <input
           onKeyUp={this.onKeyUp.bind(this)}
           type="text"/>
+        <span className="addnew"> {plus} </span>
       </div>
     )
   }

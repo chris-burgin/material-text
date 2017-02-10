@@ -7,9 +7,9 @@
 // all external references in one location.
 
 // import all require resources
-// example: import trash from '../../resources/svg/trash.jsx'
+import plus from '../../resources/svg/plus.jsx'
 
 // re-export those resources
 export {
-  // trash
+  plus
 }

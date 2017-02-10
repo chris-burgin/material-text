@@ -1,7 +1,7 @@
 // import react (for jsx support)
-import React from 'react';
+import React from 'react'
 
-// create the trash icon
+// create icon
 const trash =
   <svg width="10px" height="13px" viewBox="308 14 10 13" version="1.1">
     <defs></defs>
