@@ -4,7 +4,8 @@
 
 // ****************
 // getLine()
-// use: returns a specified line from the content text
+// use: to get a specific line from the content
+// returns: a specified line from the content text
 // ----------------
 // lineNumber: required - int - the line number to return
 // text: required - string - text content of the item
@@ -18,21 +19,27 @@ const getLine = (lineNumber, text) =>
 
 // ****************
 // getTitle()
-// use: returns the title from the content string
+// use: get the first line as a title for the sidebar item
+// returns: line 0 if exists, "New Note!" if it does not exist
 // ----------------
 // text: required - string - text content of the item
 // ****************
 const getTitle = (text) =>
-  getLine(0, text)
+  getLine(0, text).length > 0
+    ? getLine(0, text)
+    : "New Note!"
 
 // ****************
 // getShort()
-// use: returns the 2nd line of content from the content string
+// use: get short content to be used as the description of the sidebar item
+// returns: a specified line from the content text
 // ----------------
 // text: required - string - text content of the item
 // ****************
 const getShort = (text) =>
   getLine(1, text)
+    ? getLine(1, text)
+    : "No additional content."
 
 // export
 export {

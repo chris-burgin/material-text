@@ -42,7 +42,10 @@ class Editor extends React.Component {
   render() {
     return (
       <div className="editor">
-        <CodeMirror value={this.props.content} onChange={this.onContentChange.bind(this)} options={{viewportMargin: 0}}/>
+        <CodeMirror
+          value={this.props.content}
+          onChange={this.onContentChange.bind(this)}
+          options={{viewportMargin: 0}}/>
       </div>
     )
   }
