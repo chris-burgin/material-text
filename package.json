@@ -1,7 +1,7 @@
 {
-  "name": "electron-quick-start",
+  "name": "material-text",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "A minimal Electron/React application",
   "main": "main.js",
   "scripts": {
     "start": "npm run build && electron .",
@@ -20,7 +20,7 @@
     "tutorial",
     "demo"
   ],
-  "author": "GitHub",
+  "author": "Download Youth Ministry",
   "license": "CC0-1.0",
   "devDependencies": {
     "babel-core": "^6.22.1",
